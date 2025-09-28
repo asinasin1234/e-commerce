@@ -1,0 +1,32 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(230, 230, 250, 1); 
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  
+  background-image: url("./assets/image.png");
+  background-size: cover;     
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+
+  
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6); // white overlay, adjust opacity
+    z-index: -1;
+  }
+}

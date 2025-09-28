@@ -1,0 +1,130 @@
+$bg: #faf7f9;
+$text-dark: #2c2c2c;
+$accent: #c9a0dc; 
+$border: #ddd;
+
+.perfume-detail {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  padding: 50px 80px;
+  background: $bg;
+  min-height: 100vh;
+
+  .gallery {
+    display: flex;
+    gap: 20px;
+
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      img {
+        width: 60px;
+        height: 80px;
+        object-fit: cover;
+        border: 1px solid $border;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: 0.3s;
+
+        &.active {
+          border: 2px solid $accent;
+        }
+      }
+    }
+
+    .main-image img {
+      width: 400px;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .info {
+    .brand {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $accent;
+    }
+
+    .name {
+      font-size: 1.8rem;
+      margin: 5px 0 15px;
+      color: $text-dark;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .desc {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .notes {
+      margin-bottom: 20px;
+
+      h4 {
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 5px;
+          font-size: 0.95rem;
+          color: #444;
+        }
+      }
+    }
+
+    .sizes {
+      margin-bottom: 20px;
+
+      .size-options {
+        display: flex;
+        gap: 10px;
+
+        button {
+          padding: 8px 14px;
+          border: 1px solid $border;
+          background: white;
+          border-radius: 6px;
+          cursor: pointer;
+
+          &:hover {
+            background: $accent;
+            color: white;
+            border-color: $accent;
+          }
+        }
+      }
+    }
+
+    .add-btn {
+      padding: 12px 25px;
+      background: $accent;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}

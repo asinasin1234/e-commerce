@@ -1,0 +1,153 @@
+.products-page {
+  display: flex;
+  min-height: 100vh;
+  background: rgba(236, 236, 239, 0.5);
+  padding: 20px;
+
+  .sidebar {
+    width: 220px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: #6a0dad;
+    }
+
+    .filter-section {
+      margin-bottom: 20px;
+
+      h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      input {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 6px;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            color: #6a0dad;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .products-grid {
+    flex: 1;
+
+    .page-title {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #6a0dad;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      gap: 70px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        height: 180px;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .btn,
+        .btn-outline {
+          padding: 6px 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.2s;
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          background: #6a0dad;
+          color: #fff;
+          border: none;
+
+          &:hover {
+            background: #530c91;
+          }
+        }
+
+        .btn-outline {
+          background: transparent;
+          border: 1px solid #6a0dad;
+          color: #6a0dad;
+
+          &:hover {
+            background: #6a0dad;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+ .wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: #c9a0dc;
+      color: white;
+      border-color: #c9a0dc;
+    }
+  }
