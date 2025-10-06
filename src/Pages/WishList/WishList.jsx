@@ -1,15 +1,19 @@
+import "./wishList.scss";
+
 function Wishlist({ wishlist, removeFromWishlist }) {
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="wishlist-container">
       <h2>Wishlist</h2>
-      {wishlist.length === 0 && <p>No items in wishlist</p>}
+      {wishlist.length === 0 && <p className="empty-msg">No items in wishlist</p>}
+      <div className="wishlist-items">
       {wishlist.map(item => (
-        <div key={item.id} style={{ borderBottom: "1px solid #ccc", marginBottom: "10px" }}>
-          <img src={item.image || item.thumbnail} alt={item.title} style={{ height: "150px", objectFit: "contain" }} />
+        <div key={item.id} className="wishlist-card">
+          <img src={item.image || item.thumbnail} alt={item.title}  className="wishlist-img" />
           <h3>{item.title}</h3>
-          <button onClick={() => removeFromWishlist(item.id)}>Remove</button>
+          <button className="remove-btn" onClick={() => removeFromWishlist(item.id)}>Remove</button>
         </div>
       ))}
+      </div>
     </div>
   );
 }

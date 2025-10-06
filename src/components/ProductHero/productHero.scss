@@ -97,26 +97,43 @@
 
       .actions {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 8px;
+        padding: 20px;
+        justify-content: center;
 
-        .btn,
-        .btn-outline {
-          padding: 6px 10px;
-          border-radius: 6px;
-          cursor: pointer;
-          transition: 0.2s;
-          font-size: 0.9rem;
-        }
+        
 
         .btn {
           background: #6a0dad;
           color: #fff;
           border: none;
+          text-decoration: none;
+          width: 150px;
+          padding: 6px 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.2s;
+          font-size: 0.9rem;
+          
+          
+          
 
           &:hover {
             background: #530c91;
           }
+        }
+
+        .wishList-btn {
+          position: relative;
+          background: transparent;
+          width: 30px;
+          bottom: 300px;
+          left: 227px;
+          border: 0;
+          font-size: 1rem;
+
+
         }
 
         .btn-outline {
@@ -134,20 +151,63 @@
   }
 }
 
- .wishlist-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    padding: 6px 10px;
-    cursor: pointer;
-    transition: 0.3s ease;
+Link {
+  text-decoration: none;
+}
 
-    &:hover {
-      background: #c9a0dc;
-      color: white;
-      border-color: #c9a0dc;
+
+//responsive
+
+@media (max-width: 1024px) {
+  .products-page {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
+}
+
+@media (max-width: 768px) {
+  .products-page {
+    flex-direction: column;
+
+    .sidebar {
+      width: 290px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .products-grid {
+      width: 100%;
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .products-page {
+    .products-grid {
+      .product-card {
+    width: 300px;
+    .actions {
+      .wishList-btn{
+       
+        left: 134px;
+        bottom: 271px;
+      }
+      .btn {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+      }
+    }
+
+    img {
+      height: 150px;
+    }
+  }
+    }
+  }
+}
