@@ -9,6 +9,7 @@ import WishList from "./Pages/WishList/WishList";
 import AddCart from "./Pages/AddCart/AddCart";
 import { useLocalStorage } from "./hooks/localStorage";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import Coupen from "./components/Coupen/Coupen";
 
 function App() {
   const [wishlist, setWishlist] = useLocalStorage("wishlist", []);
@@ -112,7 +113,9 @@ function App() {
             />
           }
         />
+        <Route path="/Coupen" element={<Coupen />} />
       </Routes>
+      
     </>
   );
 }

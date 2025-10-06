@@ -1,0 +1,215 @@
+$primary-color: #4b0082;         // Indigo
+$bg-color: #f8f6fc;              // Soft lavender background
+$hover-color: #cda4f7;           // Light lavender hover
+$card-bg: #ffffff;               // White card
+$border-color: #ddd;             // Light border
+
+.coupen-container {
+  background: $bg-color;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.coupen-title {
+  font-size: 2rem;
+  color: $primary-color;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.coupen-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  background: $card-bg;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.coupen-input {
+  padding: 10px 14px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+  width: 200px;
+  transition: 0.3s;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba(75, 0, 130, 0.3);
+  }
+}
+
+.coupen-btn {
+  background: $primary-color;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: $hover-color;
+  }
+}
+
+.saved-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: $primary-color;
+  text-align: center;
+}
+
+.coupen-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+
+  .coupen-item {
+    background: $card-bg;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #f2e8ff;
+    }
+  }
+}
+
+.empty-msg {
+  color: gray;
+  font-style: italic;
+  text-align: center;
+}
+
+/* 🌐 Responsive Design */
+
+/* ✅ Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .coupen-container {
+    padding: 30px;
+  }
+
+  .coupen-title {
+    font-size: 1.8rem;
+  }
+
+  .coupen-form {
+    flex-direction: row;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .coupen-input {
+    width: 180px;
+    font-size: 0.95rem;
+  }
+
+  .coupen-btn {
+    font-size: 0.95rem;
+    padding: 9px 14px;
+  }
+
+  .saved-title {
+    font-size: 1.4rem;
+  }
+
+  .coupen-list .coupen-item {
+    font-size: 1rem;
+  }
+}
+
+/* ✅ Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .coupen-container {
+    padding: 20px;
+  }
+
+  .coupen-title {
+    font-size: 1.6rem;
+  }
+
+  .coupen-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .coupen-input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .coupen-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .saved-title {
+    font-size: 1.3rem;
+  }
+
+  .coupen-list {
+    max-width: 100%;
+  }
+
+  .coupen-item {
+    font-size: 0.95rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* ✅ Small Mobile (max-width: 400px) */
+@media (max-width: 400px) {
+  .coupen-container {
+    padding: 15px;
+  }
+
+  .coupen-title {
+    font-size: 1.4rem;
+  }
+
+  .coupen-form {
+    padding: 12px;
+  }
+
+  .coupen-input {
+    font-size: 0.9rem;
+  }
+
+  .coupen-btn {
+    font-size: 0.9rem;
+  }
+
+  .saved-title {
+    font-size: 1.2rem;
+  }
+
+  .coupen-item {
+    font-size: 0.9rem;
+  }
+}

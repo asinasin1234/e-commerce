@@ -1,8 +1,8 @@
-$primary-color: #4b0082;         
-$bg-color: rgba(248, 248, 254, 0.85); 
-$border-color: rgba(251, 249, 253, 0.5); 
-$hover-color: #cda4f7;            
-$btn-bg: rgba(230, 230, 250, 0.6); 
+$primary-color: #4b0082;
+$bg-color: rgba(248, 248, 254, 0.95);
+$border-color: rgba(251, 249, 253, 0.5);
+$hover-color: #cda4f7;
+$btn-bg: rgba(230, 230, 250, 0.6);
 $btn-hover-bg: rgba(210, 200, 245, 0.8);
 
 body {
@@ -13,80 +13,163 @@ body {
   background: $bg-color;
   padding: 12px 30px;
   position: fixed;
-  width: 96%;
+  width: 100%;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(4px); 
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid $border-color;
 
   .nav-cont {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    
 
-    .navbar-collapse {
-      display: flex !important;
-      justify-content: space-between;
-      width: 100%;
+    .nav-left,
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      right: 30px;
 
-      .nav-left,
-      .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+      .nav-item {
+        text-decoration: none;
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 25px;
+        padding: 6px 12px;
+        transition: all 0.3s ease;
 
-        .nav-item {
-          text-decoration: none;
-          color: $primary-color;
-          font-weight: 500;
-          font-size: 25px;
-          padding: 6px 12px;
+        &:hover {
+          color: $hover-color;
+          transform: scale(1.05);
+        }
+
+        &.card-btn {
+          background: $btn-bg;
+          border-radius: 50%;
+          width: 45px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           transition: all 0.3s ease;
 
           &:hover {
-            color: $hover-color;
+            background: $btn-hover-bg;
             transform: scale(1.05);
           }
 
-          &.card-btn {
-            background: $btn-bg;
-            color: $primary-color;
-            border-radius: 8px;
-            padding: 6px 12px;
-            transition: all 0.3s ease;
-
-            &:hover {
-              background: $btn-hover-bg;
-              color: $primary-color;
-              transform: scale(1.05);
-            }
-          }
-
           svg {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            color: $primary-color;
           }
         }
       }
     }
   }
 }
-//responsive
- 
-@media (max-width: 991px) {
+
+/* Hamburger menu */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: $primary-color;
+}
+
+/* Mobile slide-in menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background: $bg-color;
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; // below navbar
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 20px;
+
+  .mobile-item {
+    font-size: 22px;
+    font-weight: 500;
+    color: $primary-color;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $hover-color;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+}
+
+@media (max-width: 768px) {
   .navbar-cont {
-    .navbar-collapse {
-      flex-direction: column !important;
-      .nav-left,
+    .nav-cont {
       .nav-right {
-        flex-direction: column;
-        gap: 10px;
-        margin: 10px 0;
+        position: relative;
+        right: 50px;
       }
     }
+  }
+}
+
+/* Mobile only */
+@media (max-width: 576px) {
+  .navbar-cont {
+    width: 300px;
+    .nav-cont {
+      .nav-right {
+        position: relative;
+        right: -13px;
+
+        .nav-item {
+          &.card-btn {
+            width: 20px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-left {
+    display: none !important;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
   }
 }

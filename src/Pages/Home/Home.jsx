@@ -6,11 +6,11 @@ import Footer from "../../components/Footer/Footer";
 
 function Home({wishlist , toggleWishlist}) {
   return (
-    <div>
+    <>
       <Hero />
       <HomeProduct toggleWishlist={toggleWishlist} wishlist={wishlist}/>
       <Footer />
-    </div>
+    </>
   );
 }
 

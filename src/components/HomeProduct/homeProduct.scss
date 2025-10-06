@@ -1,12 +1,146 @@
-.product-btn {
-    position: relative;
-    left: 276px;
-    bottom: 252px;
-    border-radius: 50px;
-    border: 0;
-    background-color: null;
+.home-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+  padding: 70px;
+  border-radius: 50px;
+
+  .prod-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; // ✅ for wishlist button positioning
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    img {
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      max-width: 100%;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .view-link {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #0056b3;
+      }
+    }
+
+    .wishlist-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      // ✅ instead of hard bottom/left, place it on top-right corner
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      svg {
+        font-size: 1rem;
+        color: #777;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
 }
 
-.prod-card{
-    border-radius: 30px;
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .home-products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-products {
+    grid-template-columns: 2fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .prod-card {
+    
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .view-link {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
+
+    .wishlist-btn {
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home-products {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .prod-card {
+    padding: 12px;
+    width: 300px;
+
+    img {
+      height: 120px;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
 }
